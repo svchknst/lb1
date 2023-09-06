@@ -1,0 +1,29 @@
+<html>
+
+<head>
+    <script>
+        function result() {
+            var sum = 0;
+            var N = Number(document.forms["frm"].elements["N"].value);
+            var x = Number(document.forms["frm"].elements["x"].value);
+            if (x < 1) {
+                for (var n = 1; n <= N; n++) {
+                    sum += (((2 * n) - 1) * (x ** ((2 * n) + 1))) / ((2 * n) * ((2 * n) + 1));
+                }
+                document.write(sum);
+            } else {
+                document.write("Введённое значение X не соответствует.")
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <form id="frm">
+        <input type="text" placeholder="Введите n" id="N">
+        <input type="text" placeholder="Введите x" id="x">
+        <input type="button" onclick="result()" value="Далее">
+    </form>
+</body>
+
+</html>

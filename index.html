@@ -2,27 +2,26 @@
 
 <head>
     <script>
-        function result() {
-            var sum = 0;
-            var N = Number(document.forms["frm"].elements["N"].value);
-            var x = Number(document.forms["frm"].elements["x"].value);
-            if (x < 1) {
-                for (var n = 1; n <= N; n++) {
-                    sum += (((2 * n) - 1) * (x ** ((2 * n) + 1))) / ((2 * n) * ((2 * n) + 1));
+        function mas() {
+            var n = document.forms["form"].elements["N"].value;
+            var k = document.forms["form"].elements["K"].value;
+            var massiv = n.split(' ');
+            var a = [];
+            for (let i = 0; i < massiv.length; i++) {
+                if (massiv[i] > k) {
+                    a[i] = massiv[i];
                 }
-                document.write(sum);
-            } else {
-                document.write("Введённое значение X не соответствует.")
             }
+            document.write(a.join(' '));
         }
     </script>
 </head>
 
 <body>
-    <form id="frm">
-        <input type="text" placeholder="Введите n" id="N">
-        <input type="text" placeholder="Введите x" id="x">
-        <input type="button" onclick="result()" value="Далее">
+    <form id="form">
+        <input type="text" placeholder="Введите число n" id="N">
+        <input type="text" placeholder="Введите число k" id="K">
+        <input type="button" onclick="mas()" value="Отправить">
     </form>
 </body>
 
